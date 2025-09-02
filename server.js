@@ -1,11 +1,18 @@
-import Express from "express"
+import express from "express"
 
 const app = express()
 
 app.get("/", (req, res) => {
-    res.send("Hello World!")
+    console.log(req)
+    res.send("<h1>Hello World! Kanelbulle forever!<h1>")
 })
 
-app.listen(300, () => {
-    console.log("Server is running, Niggas!")
+app.get("/about", (req, res) => {
+    res.json({
+        "message": "Hatisk textbox"
+    })
+})
+
+app.listen(3000, () => {
+    console.log("Server is running on http://localhost:3000")
 })
